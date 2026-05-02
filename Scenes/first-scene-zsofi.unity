@@ -380,8 +380,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1b624cbfc342c456c883f9f7b45dd5a0, type: 3}
       propertyPath: m_Name
-      value: Darf
+      value: Dwarf
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 1b624cbfc342c456c883f9f7b45dd5a0, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c86e44030328346ffa641e3af42a83c2, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
