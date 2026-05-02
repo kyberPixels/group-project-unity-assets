@@ -12,14 +12,28 @@ public class botAnimator : MonoBehaviour
 
     void Update()
     {
-        bool forward = Keyboard.current.wKey.isPressed;
-        if (forward)
+        var keyboard = Keyboard.current;
+        if (keyboard == null) return;
+
+        bool forward = keyboard.rightArrowKey.isPressed;
+        bool run = keyboard.wKey.isPressed;
+
+        if (run)
+        {
+            animator.SetBool("isRunning", true);
+            animator.SetBool("isWalking", false);
+
+        }
+        else if (forward)
         {
             animator.SetBool("isWalking", true);
+            animator.SetBool("isRunning", false);
+
         }
         else
         {
             animator.SetBool("isWalking", false);
+            animator.SetBool("isRunning", false);
         }
     }
 }
