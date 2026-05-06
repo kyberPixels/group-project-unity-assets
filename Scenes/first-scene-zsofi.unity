@@ -937,7 +937,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1b624cbfc342c456c883f9f7b45dd5a0, type: 3}
       propertyPath: m_Name
-      value: Dwarf
+      value: Mano
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1b624cbfc342c456c883f9f7b45dd5a0, type: 3}
       propertyPath: m_IsActive
@@ -1604,6 +1604,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: XBot
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4b3099267a2d047fd80bcf5d81e86205, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1953,7 +1957,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1459536673}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4180bd810544a46959a7f88269cb8769, type: 3}
   m_Name: 
