@@ -1574,7 +1574,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4b3099267a2d047fd80bcf5d81e86205, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4b3099267a2d047fd80bcf5d81e86205, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1582,7 +1582,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4b3099267a2d047fd80bcf5d81e86205, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4b3099267a2d047fd80bcf5d81e86205, type: 3}
       propertyPath: m_LocalRotation.z
@@ -1594,7 +1594,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4b3099267a2d047fd80bcf5d81e86205, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4b3099267a2d047fd80bcf5d81e86205, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -1955,7 +1955,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1459536673}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d7cb6bc885e7484f9f60bd3550b14b4, type: 3}
+  m_Script: {fileID: 11500000, guid: 4180bd810544a46959a7f88269cb8769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
 --- !u!1 &1859476492
