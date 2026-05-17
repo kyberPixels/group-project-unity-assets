@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 895bd1c99d95a4fec8192e5f5f7f0185
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 180352
+  packageName: Fristy stylize Modular Assets 2
+  packageVersion: 2.0
+  assetPath: Assets/Fristy stylize Modular Assets 2/Shaders/URP/GetLighting.hlsl.txt
+  uploadId: 402846
