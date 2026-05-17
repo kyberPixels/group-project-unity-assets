@@ -4,10 +4,11 @@ using TMPro;
 public class GameEventListener : MonoBehaviour
 {
     [SerializeField] private SupabaseRealtimeClient realtimeClient;
-    [SerializeField] private Animator characterAnimator;
+    [SerializeField] private Animator archerAnimator;
+    [SerializeField] private Animator assassinAnimator;
+    [SerializeField] private Animator sorcererAnimator;
+    [SerializeField] private Animator dmAnimator;
     [SerializeField] private TMP_Text diceResultText;
-
-    private static readonly int VelocityZ = Animator.StringToHash("Velocity Z");
 
     void OnEnable()
     {
@@ -29,7 +30,7 @@ public class GameEventListener : MonoBehaviour
                 HandleAction(e.action_name);
                 break;
 
-            case "die_roll":
+            case "dice":
                 HandleDieRoll(e.die_type, e.die_result);
                 break;
 
@@ -41,23 +42,21 @@ public class GameEventListener : MonoBehaviour
 
     void HandleAction(string actionName)
     {
-        if (characterAnimator == null) return;
+        Animator target = null;
 
-        switch (actionName)
+        if (actionName.StartsWith("archer_"))        target = archerAnimator;
+        else if (actionName.StartsWith("assassin_")) target = assassinAnimator;
+        else if (actionName.StartsWith("sorcerer_")) target = sorcererAnimator;
+        else if (actionName.StartsWith("dm_"))       target = dmAnimator;
+
+        if (target == null)
         {
-            case "walk":
-                characterAnimator.SetFloat(VelocityZ, 1f);
-                break;
-            case "stop":
-                characterAnimator.SetFloat(VelocityZ, 0f);
-                break;
-            case "attack":
-                characterAnimator.SetTrigger("Attack");
-                break;
-            default:
-                Debug.LogWarning("Unknown action_name: " + actionName);
-                break;
+            Debug.LogWarning("No animator found for action: " + actionName);
+            return;
         }
+
+        Debug.Log("Calling SetTrigger(\"" + actionName + "\") on: " + target.gameObject.name);
+        target.SetTrigger(actionName);
     }
 
     void HandleDieRoll(string dieType, int dieResult)
