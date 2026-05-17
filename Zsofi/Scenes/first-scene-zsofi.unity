@@ -667,6 +667,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17ad36be874a344ff9cfafe74c832067, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+--- !u!95 &561546890 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 1b624cbfc342c456c883f9f7b45dd5a0, type: 3}
+  m_PrefabInstance: {fileID: 1440716963}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &690249750
 GameObject:
   m_ObjectHideFlags: 0
@@ -1953,6 +1958,68 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1765384303}
   m_CullTransparentMesh: 1
+--- !u!1 &1810323868
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1810323869}
+  - component: {fileID: 1810323871}
+  - component: {fileID: 1810323870}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1810323869
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1810323868}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.07331, y: 1.5581, z: -0.22587}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1810323870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1810323868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94a048294ea6c4bd197dfc5494b9caf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameEventListener
+  realtimeClient: {fileID: 1810323871}
+  characterAnimator: {fileID: 561546890}
+  diceResultText: {fileID: 0}
+--- !u!114 &1810323871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1810323868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a52c9cc6e17246dca2c062dd2ff0100, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SupabaseRealtimeClient
+  config: {fileID: 11400000, guid: cb6c0fc4ccc4548d8b90c282d8f46a73, type: 2}
+  groupId: 878315
 --- !u!1 &1859476492
 GameObject:
   m_ObjectHideFlags: 0
@@ -2180,3 +2247,4 @@ SceneRoots:
   - {fileID: 9368544}
   - {fileID: 1116654705}
   - {fileID: 1982462809}
+  - {fileID: 1810323869}
