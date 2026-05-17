@@ -82,7 +82,7 @@ public class SupabaseRealtimeClient : MonoBehaviour
             "}";
 
         _ = _socket.SendText(joinMsg);
-        Debug.Log("Joined Supabase channel for group: " + groupId);
+        Debug.Log("Supabase subscribed for group: " + groupId);
     }
 
     IEnumerator HeartbeatLoop()
@@ -97,7 +97,7 @@ public class SupabaseRealtimeClient : MonoBehaviour
 
     void HandleMessage(string json)
     {
-        if (!json.Contains("postgres_changes")) return;
+        if (!json.Contains("\"event\":\"postgres_changes\"")) return;
 
         try
         {
