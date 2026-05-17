@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class ManoControllerScript : MonoBehaviour
+public class manoController : MonoBehaviour
 {
     Animator animator;
     float velocity = 0.0f;
@@ -39,12 +39,21 @@ public class ManoControllerScript : MonoBehaviour
         if (!forwardPressed && velocity > 0.0f)
         {
             velocity -= Time.deltaTime * deceleration;
+            if (direction > 0.0f)
+            {
+                direction -= Time.deltaTime * rotationSpeed;
+            }
+            else if (direction < 0.0f)
+            {
+                direction += Time.deltaTime * rotationSpeed;
+            }
+
         }
-        if (forwardPressed && rightPressed && !leftPressed && direction > -2.0f)
+        if (forwardPressed && rightPressed && !leftPressed && direction < 2.0f)
         {
             direction -= Time.deltaTime * rotationSpeed;
         }
-        if (forwardPressed && leftPressed && !rightPressed && direction < 2.0f)
+        if (forwardPressed && leftPressed && !rightPressed && direction > -2.0f)
         {
             direction += Time.deltaTime * rotationSpeed;
         }
