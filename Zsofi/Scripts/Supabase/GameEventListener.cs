@@ -7,6 +7,7 @@ public class GameEventListener : MonoBehaviour
     [SerializeField] private Animator archerAnimator;
     [SerializeField] private Animator assassinAnimator;
     [SerializeField] private Animator sorcererAnimator;
+    [SerializeField] private Animator dmAnimator;
     [SerializeField] private TMP_Text diceResultText;
 
     void OnEnable()
@@ -46,6 +47,7 @@ public class GameEventListener : MonoBehaviour
         if (actionName.StartsWith("archer_"))        target = archerAnimator;
         else if (actionName.StartsWith("assassin_")) target = assassinAnimator;
         else if (actionName.StartsWith("sorcerer_")) target = sorcererAnimator;
+        else if (actionName.StartsWith("dm_"))       target = dmAnimator;
 
         if (target == null)
         {
