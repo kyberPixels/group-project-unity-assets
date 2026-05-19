@@ -821,7 +821,6 @@ GameObject:
   - component: {fileID: 180149780}
   - component: {fileID: 180149783}
   - component: {fileID: 180149782}
-  - component: {fileID: 180149784}
   m_Layer: 0
   m_Name: ImageTargetDragon
   m_TagString: Untagged
@@ -915,26 +914,7 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 180149784}
---- !u!114 &180149784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 180149779}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
-  mObserverBehaviour: {fileID: 180149783}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: dragon
-  mDatasetName: Vuforia/dnd-game-database.xml
-  mCastedBehaviour: {fileID: 180149783}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
+  mPreview: {fileID: 0}
 --- !u!1001 &182887801
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1094,7 +1074,6 @@ GameObject:
   - component: {fileID: 188881412}
   - component: {fileID: 188881415}
   - component: {fileID: 188881414}
-  - component: {fileID: 188881416}
   m_Layer: 0
   m_Name: ImageTargetHuman
   m_TagString: Untagged
@@ -1188,26 +1167,7 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 188881416}
---- !u!114 &188881416
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 188881411}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
-  mObserverBehaviour: {fileID: 188881415}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: human
-  mDatasetName: Vuforia/dnd-game-database.xml
-  mCastedBehaviour: {fileID: 188881415}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
+  mPreview: {fileID: 0}
 --- !u!1001 &220614406
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2900,7 +2860,6 @@ GameObject:
   - component: {fileID: 605885640}
   - component: {fileID: 605885643}
   - component: {fileID: 605885642}
-  - component: {fileID: 605885644}
   m_Layer: 0
   m_Name: ImageTargetElf
   m_TagString: Untagged
@@ -2994,26 +2953,7 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 605885644}
---- !u!114 &605885644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 605885639}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
-  mObserverBehaviour: {fileID: 605885643}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: elf
-  mDatasetName: Vuforia/dnd-game-database.xml
-  mCastedBehaviour: {fileID: 605885643}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
+  mPreview: {fileID: 0}
 --- !u!1001 &687552992
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4553,7 +4493,6 @@ GameObject:
   - component: {fileID: 976171695}
   - component: {fileID: 976171698}
   - component: {fileID: 976171697}
-  - component: {fileID: 976171699}
   m_Layer: 0
   m_Name: ImageTargetDwarf
   m_TagString: Untagged
@@ -4647,26 +4586,7 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 976171699}
---- !u!114 &976171699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 976171694}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
-  mObserverBehaviour: {fileID: 976171698}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: dwarf
-  mDatasetName: Vuforia/dnd-game-database.xml
-  mCastedBehaviour: {fileID: 976171698}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
+  mPreview: {fileID: 0}
 --- !u!1001 &999274235
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5819,13 +5739,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1354497990}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.020812755, y: -0.70680046, z: -0.020812755, w: 0.70680046}
-  m_LocalPosition: {x: 265.7, y: 21.81, z: 72.54}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 223, y: 64, z: 66.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: -3.373, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1001 &1376383679
 PrefabInstance:
   m_ObjectHideFlags: 0
