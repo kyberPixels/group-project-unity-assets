@@ -5788,6 +5788,7 @@ GameObject:
   - component: {fileID: 1354497993}
   - component: {fileID: 1354497992}
   - component: {fileID: 1354497991}
+  - component: {fileID: 1354497996}
   m_Layer: 0
   m_Name: ARCamera
   m_TagString: MainCamera
@@ -5895,6 +5896,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -3.373, y: -90, z: 0}
+--- !u!114 &1354497996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354497990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a5bf9e5a130147f49e51291b9ccbf36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LockCameraTransform
 --- !u!1001 &1376383679
 PrefabInstance:
   m_ObjectHideFlags: 0
