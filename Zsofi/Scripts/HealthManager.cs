@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 public class HealthManager : MonoBehaviour
 {
-    [SerializeField] private int maxHp = 50;
+    [SerializeField] private int maxHp = 10000;
 
     public int MaxHp => maxHp;
     public int CurrentHp { get; private set; }

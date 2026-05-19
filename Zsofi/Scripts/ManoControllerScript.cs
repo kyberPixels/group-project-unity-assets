@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class manoController : MonoBehaviour
+public class manoControllerScript : MonoBehaviour
 {
     Animator animator;
     float velocity = 0.0f;

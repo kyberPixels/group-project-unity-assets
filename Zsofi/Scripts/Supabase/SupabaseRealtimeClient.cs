@@ -10,6 +10,8 @@ public class GameEvent
     public string die_type;
     public int die_result;
     public string group_id;
+    public float velocity;
+    public float direction;
 }
 
 public class SupabaseRealtimeClient : MonoBehaviour
@@ -108,11 +110,11 @@ public class SupabaseRealtimeClient : MonoBehaviour
             WsRecord r = msg.payload.data.record;
             OnGameEvent?.Invoke(new GameEvent
             {
-                event_type  = r.event_type,
+                event_type = r.event_type,
                 action_name = r.action_name,
-                die_type    = r.die_type,
-                die_result  = r.die_result,
-                group_id    = r.group_id
+                die_type = r.die_type,
+                die_result = r.die_result,
+                group_id = r.group_id
             });
         }
         catch (Exception e)
@@ -136,13 +138,14 @@ public class SupabaseRealtimeClient : MonoBehaviour
 
     [Serializable] private class WsMessage { public WsPayload payload; }
     [Serializable] private class WsPayload { public WsData data; }
-    [Serializable] private class WsData   { public WsRecord record; }
-    [Serializable] private class WsRecord
+    [Serializable] private class WsData { public WsRecord record; }
+    [Serializable]
+    private class WsRecord
     {
         public string group_id;
         public string event_type;
         public string action_name;
         public string die_type;
-        public int    die_result;
+        public int die_result;
     }
 }
