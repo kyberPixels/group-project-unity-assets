@@ -1,0 +1,40 @@
+using UnityEngine;
+
+public class CharacterMovement2 : MonoBehaviour
+{
+    public float moveSpeed = 100f;
+
+    private Animator animator;
+    private int velocityHash;
+    private float _currentVelocity;
+
+    void Start()
+    {
+        animator = GetComponent<Animator>();
+        velocityHash = Animator.StringToHash("Velocity");
+    }
+
+    void Update()
+    {
+        if (_currentVelocity > 0f)
+            transform.position += transform.forward * _currentVelocity * moveSpeed * Time.deltaTime;
+    }
+
+    public void ReceiveNetworkInput(float velocity, float rotation)
+    {
+        if (animator == null) return;
+        if (velocity == 0)
+        {
+            _currentVelocity = 0f;
+        }
+        else
+        {
+            _currentVelocity = velocity + 4f;
+        }
+
+        animator.SetFloat(velocityHash, velocity);
+
+        if (velocity > 0f)
+            transform.rotation = Quaternion.Euler(transform.eulerAngles.x, rotation, transform.eulerAngles.z);
+    }
+}
