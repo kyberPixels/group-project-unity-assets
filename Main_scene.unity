@@ -2409,7 +2409,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ce0c8976b050c3d4195a776f0d60dbba, type: 2}
+  - {fileID: 2100000, guid: ea747bc7b4768c344842950ac79032ef, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19123,6 +19123,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: e5f715dc5bad9434686c0c6b4e8bcbb7, type: 2}
+    - target: {fileID: 5866666021909216657, guid: b3c20c15ffcd04f4181c2676045bcbb0, type: 3}
+      propertyPath: m_AnimatePhysics
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 8334069500023945144, guid: b3c20c15ffcd04f4181c2676045bcbb0, type: 3}
