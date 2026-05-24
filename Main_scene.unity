@@ -9284,6 +9284,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100002, guid: 2f4e6492f506bbb4a8aeba850e3bb52f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1963625891}
+    - targetCorrespondingSourceObject: {fileID: 100002, guid: 2f4e6492f506bbb4a8aeba850e3bb52f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1963625892}
   m_SourcePrefab: {fileID: 100100000, guid: 2f4e6492f506bbb4a8aeba850e3bb52f, type: 3}
 --- !u!4 &779436737 stripped
 Transform:
@@ -11068,6 +11071,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1372166752363329700, guid: 694964309b7b24b57ac84dfa2a6f2889, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1730378799}
+    - targetCorrespondingSourceObject: {fileID: 1372166752363329700, guid: 694964309b7b24b57ac84dfa2a6f2889, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1730378800}
     - targetCorrespondingSourceObject: {fileID: 3279247931812673668, guid: 694964309b7b24b57ac84dfa2a6f2889, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1111732315}
@@ -19972,6 +19978,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b3c20c15ffcd04f4181c2676045bcbb0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1684864695}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b3c20c15ffcd04f4181c2676045bcbb0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1684864696}
   m_SourcePrefab: {fileID: 100100000, guid: b3c20c15ffcd04f4181c2676045bcbb0, type: 3}
 --- !u!4 &1426705343 stripped
 Transform:
@@ -23021,6 +23030,20 @@ MonoBehaviour:
   OnHpChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1684864696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684864694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c5fe6e3cd8b6c46b0d8084cfadbd5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterMovement
+  moveSpeed: 5
+  rotationSpeed: 10
 --- !u!65 &1685849904
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23185,6 +23208,20 @@ MonoBehaviour:
   OnHpChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1730378800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136988275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c5fe6e3cd8b6c46b0d8084cfadbd5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterMovement
+  moveSpeed: 5
+  rotationSpeed: 10
 --- !u!65 &1739909831
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24290,6 +24327,20 @@ MonoBehaviour:
   OnHpChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1963625892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544413027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c5fe6e3cd8b6c46b0d8084cfadbd5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterMovement
+  moveSpeed: 5
+  rotationSpeed: 10
 --- !u!1001 &1983984857
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24819,6 +24870,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8a9feaa298081cc4b85b995cf9cda8f5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2002449237}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8a9feaa298081cc4b85b995cf9cda8f5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2002449238}
     - targetCorrespondingSourceObject: {fileID: 6934378051403548049, guid: 8a9feaa298081cc4b85b995cf9cda8f5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1983984860}
@@ -24961,6 +25015,20 @@ MonoBehaviour:
   OnHpChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2002449238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002449235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c5fe6e3cd8b6c46b0d8084cfadbd5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterMovement
+  moveSpeed: 5
+  rotationSpeed: 10
 --- !u!65 &2004373396
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25384,6 +25452,10 @@ MonoBehaviour:
   sorcererAnimator: {fileID: 1730378797}
   dmAnimator: {fileID: 1963625890}
   diceResultText: {fileID: 1800402599}
+  archerMovement: {fileID: 1684864696}
+  assassinMovement: {fileID: 2002449238}
+  sorcererMovement: {fileID: 1730378800}
+  dmMovement: {fileID: 1963625892}
 --- !u!114 &2044340791
 MonoBehaviour:
   m_ObjectHideFlags: 0

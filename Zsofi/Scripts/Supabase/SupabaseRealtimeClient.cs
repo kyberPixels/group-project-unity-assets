@@ -18,6 +18,7 @@ public class PlayerState
 {
     public string user_id;
     public string group_id;
+    public string state_type;
     public float velocity;
     public float rotation;
     public string last_die_type;
@@ -160,6 +161,7 @@ public class SupabaseRealtimeClient : MonoBehaviour
                 {
                     user_id = r.user_id,
                     group_id = r.group_id,
+                    state_type = r.state_type,
                     velocity = r.velocity,
                     rotation = r.rotation,
                     last_die_type = r.last_die_type,
@@ -212,6 +214,7 @@ public class SupabaseRealtimeClient : MonoBehaviour
         public int die_result;
         // player_state fields
         public string user_id;
+        public string state_type;
         public float velocity;
         public float rotation;
         public string last_die_type;

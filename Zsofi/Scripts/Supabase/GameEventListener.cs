@@ -10,6 +10,12 @@ public class GameEventListener : MonoBehaviour
     [SerializeField] private Animator dmAnimator;
     [SerializeField] private TMP_Text diceResultText;
 
+    [Header("Movement")]
+    [SerializeField] private CharacterMovement2 archerMovement;
+    [SerializeField] private CharacterMovement2 assassinMovement;
+    [SerializeField] private CharacterMovement2 sorcererMovement;
+    [SerializeField] private CharacterMovement2 dmMovement;
+
     void OnEnable()
     {
         if (realtimeClient == null) { Debug.LogError("[GameEventListener] realtimeClient is not assigned in the Inspector!"); return; }
@@ -49,10 +55,10 @@ public class GameEventListener : MonoBehaviour
     {
         Animator target = null;
 
-        if (actionName.StartsWith("archer_"))        target = archerAnimator;
+        if (actionName.StartsWith("archer_")) target = archerAnimator;
         else if (actionName.StartsWith("assassin_")) target = assassinAnimator;
         else if (actionName.StartsWith("sorcerer_")) target = sorcererAnimator;
-        else if (actionName.StartsWith("dm_"))       target = dmAnimator;
+        else if (actionName.StartsWith("dm_")) target = dmAnimator;
 
         if (target == null)
         {
@@ -74,6 +80,16 @@ public class GameEventListener : MonoBehaviour
 
     void HandlePlayerState(PlayerState ps)
     {
-        Debug.Log($"[player_state] user={ps.user_id} | velocity={ps.velocity} | rotation={ps.rotation} | die={ps.last_die_type} ({ps.last_die_result})");
+        Debug.Log($"[player_state] type={ps.state_type} | vel={ps.velocity} | rot={ps.rotation}");
+
+        CharacterMovement2 target = null;
+        if      (ps.state_type != null && ps.state_type.StartsWith("archer_"))    target = archerMovement;
+        else if (ps.state_type != null && ps.state_type.StartsWith("assassin_"))  target = assassinMovement;
+        else if (ps.state_type != null && ps.state_type.StartsWith("sorcerer_"))  target = sorcererMovement;
+        else if (ps.state_type != null && ps.state_type.StartsWith("dm_"))        target = dmMovement;
+
+        if (target == null) return;
+
+        target.ReceiveNetworkInput(ps.velocity, ps.rotation);
     }
 }
