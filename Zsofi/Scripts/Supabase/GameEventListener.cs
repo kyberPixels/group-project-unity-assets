@@ -12,12 +12,17 @@ public class GameEventListener : MonoBehaviour
 
     void OnEnable()
     {
+        if (realtimeClient == null) { Debug.LogError("[GameEventListener] realtimeClient is not assigned in the Inspector!"); return; }
         realtimeClient.OnGameEvent += HandleGameEvent;
+        realtimeClient.OnPlayerStateChange += HandlePlayerState;
+        Debug.Log("[GameEventListener] Subscribed to Supabase events.");
     }
 
     void OnDisable()
     {
+        if (realtimeClient == null) return;
         realtimeClient.OnGameEvent -= HandleGameEvent;
+        realtimeClient.OnPlayerStateChange -= HandlePlayerState;
     }
 
     void HandleGameEvent(GameEvent e)
@@ -65,5 +70,10 @@ public class GameEventListener : MonoBehaviour
             diceResultText.text = dieType + ": " + dieResult;
 
         Debug.Log("Die roll — " + dieType + " → " + dieResult);
+    }
+
+    void HandlePlayerState(PlayerState ps)
+    {
+        Debug.Log($"[player_state] user={ps.user_id} | velocity={ps.velocity} | rotation={ps.rotation} | die={ps.last_die_type} ({ps.last_die_result})");
     }
 }
