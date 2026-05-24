@@ -15,6 +15,8 @@ public class GameEventListener : MonoBehaviour
     [SerializeField] private CharacterMovement2 assassinMovement;
     [SerializeField] private CharacterMovement2 sorcererMovement;
     [SerializeField] private CharacterMovement2 dmMovement;
+    public ParticleSystem leaf;
+    public ParticleSystem fire;
 
     void OnEnable()
     {
@@ -68,6 +70,8 @@ public class GameEventListener : MonoBehaviour
 
         Debug.Log("Calling SetTrigger(\"" + actionName + "\") on: " + target.gameObject.name);
         target.SetTrigger(actionName);
+        if (actionName == "sorcerer_fight") leaf.Play();
+        if (actionName == "dm_fight") fire.Play();
     }
 
     void HandleDieRoll(string dieType, int dieResult)
@@ -83,10 +87,10 @@ public class GameEventListener : MonoBehaviour
         Debug.Log($"[player_state] type={ps.state_type} | vel={ps.velocity} | rot={ps.rotation}");
 
         CharacterMovement2 target = null;
-        if      (ps.state_type != null && ps.state_type.StartsWith("archer_"))    target = archerMovement;
-        else if (ps.state_type != null && ps.state_type.StartsWith("assassin_"))  target = assassinMovement;
-        else if (ps.state_type != null && ps.state_type.StartsWith("sorcerer_"))  target = sorcererMovement;
-        else if (ps.state_type != null && ps.state_type.StartsWith("dm_"))        target = dmMovement;
+        if (ps.state_type != null && ps.state_type.StartsWith("archer_")) target = archerMovement;
+        else if (ps.state_type != null && ps.state_type.StartsWith("assassin_")) target = assassinMovement;
+        else if (ps.state_type != null && ps.state_type.StartsWith("sorcerer_")) target = sorcererMovement;
+        else if (ps.state_type != null && ps.state_type.StartsWith("dm_")) target = dmMovement;
 
         if (target == null) return;
 

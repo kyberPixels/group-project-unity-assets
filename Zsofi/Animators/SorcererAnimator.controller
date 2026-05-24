@@ -103,7 +103,7 @@ BlendTree:
   m_BlendParameterY: Velocity Z
   m_MinThreshold: 0
   m_MaxThreshold: 1
-  m_UseAutomaticThresholds: 1
+  m_UseAutomaticThresholds: 0
   m_NormalizedBlendValues: 0
   m_BlendType: 0
 --- !u!1102 &-573880106008949237
@@ -142,18 +142,6 @@ AnimatorController:
   m_Name: SorcererAnimator
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: Velocity Z
-    m_Type: 1
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: Velocity X
-    m_Type: 1
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
   - m_Name: sorcerer_defend
     m_Type: 9
     m_DefaultFloat: 0
@@ -179,12 +167,6 @@ AnimatorController:
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
   - m_Name: Velocity
-    m_Type: 1
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: Direction
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -402,7 +384,7 @@ AnimatorStateMachine:
     m_Position: {x: 100, y: 30, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 810763645438223680}
-    m_Position: {x: -200, y: 40, z: 0}
+    m_Position: {x: -190, y: 50, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -573880106008949237}
     m_Position: {x: -290, y: 190, z: 0}

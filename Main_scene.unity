@@ -10955,6 +10955,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 5665834116679612516, guid: 694964309b7b24b57ac84dfa2a6f2889, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5796167187764748919, guid: 694964309b7b24b57ac84dfa2a6f2889, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -11074,6 +11078,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1372166752363329700, guid: 694964309b7b24b57ac84dfa2a6f2889, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1730378800}
+    - targetCorrespondingSourceObject: {fileID: 1372166752363329700, guid: 694964309b7b24b57ac84dfa2a6f2889, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1730378801}
     - targetCorrespondingSourceObject: {fileID: 3279247931812673668, guid: 694964309b7b24b57ac84dfa2a6f2889, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1111732315}
@@ -23044,6 +23051,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharacterMovement
   moveSpeed: 5
   rotationSpeed: 10
+  rb: {fileID: 0}
+  animator: {fileID: 0}
+  movementInput: {x: 0, y: 0, z: 0}
+  velocityHash: 0
+  _networkInputActive: 0
 --- !u!65 &1685849904
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23189,9 +23201,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 136988275}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17ad36be874a344ff9cfafe74c832067, type: 3}
+  m_Script: {fileID: 11500000, guid: 59c5fe6e3cd8b6c46b0d8084cfadbd5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::manoController
+  moveSpeed: 5
+  rotationSpeed: 10
+  rb: {fileID: 0}
+  animator: {fileID: 0}
+  movementInput: {x: 0, y: 0, z: 0}
+  velocityHash: 0
+  _networkInputActive: 0
 --- !u!114 &1730378799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23217,11 +23236,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 136988275}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59c5fe6e3cd8b6c46b0d8084cfadbd5b, type: 3}
+  m_Script: {fileID: 11500000, guid: bd5fb9b4a3a2f422b85491b8423540c6, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CharacterMovement
-  moveSpeed: 5
-  rotationSpeed: 10
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterMovement2
+  moveSpeed: 3
+--- !u!54 &1730378801
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136988275}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &1739909831
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24341,6 +24386,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharacterMovement
   moveSpeed: 5
   rotationSpeed: 10
+  rb: {fileID: 0}
+  animator: {fileID: 0}
+  movementInput: {x: 0, y: 0, z: 0}
+  velocityHash: 0
+  _networkInputActive: 0
 --- !u!1001 &1983984857
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25029,6 +25079,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharacterMovement
   moveSpeed: 5
   rotationSpeed: 10
+  rb: {fileID: 0}
+  animator: {fileID: 0}
+  movementInput: {x: 0, y: 0, z: 0}
+  velocityHash: 0
+  _networkInputActive: 0
 --- !u!65 &2004373396
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25452,10 +25507,12 @@ MonoBehaviour:
   sorcererAnimator: {fileID: 1730378797}
   dmAnimator: {fileID: 1963625890}
   diceResultText: {fileID: 1800402599}
-  archerMovement: {fileID: 1684864696}
-  assassinMovement: {fileID: 2002449238}
+  archerMovement: {fileID: 0}
+  assassinMovement: {fileID: 0}
   sorcererMovement: {fileID: 1730378800}
-  dmMovement: {fileID: 1963625892}
+  dmMovement: {fileID: 0}
+  leaf: {fileID: 508134782}
+  fire: {fileID: 1164224417}
 --- !u!114 &2044340791
 MonoBehaviour:
   m_ObjectHideFlags: 0
