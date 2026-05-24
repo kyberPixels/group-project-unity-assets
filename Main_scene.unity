@@ -23049,13 +23049,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59c5fe6e3cd8b6c46b0d8084cfadbd5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterMovement
-  moveSpeed: 5
-  rotationSpeed: 10
-  rb: {fileID: 0}
-  animator: {fileID: 0}
-  movementInput: {x: 0, y: 0, z: 0}
-  velocityHash: 0
-  _networkInputActive: 0
 --- !u!65 &1685849904
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23201,16 +23194,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 136988275}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59c5fe6e3cd8b6c46b0d8084cfadbd5b, type: 3}
+  m_Script: {fileID: 11500000, guid: 9806564d8f12a44db9e9843a8fd34dcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::manoController
-  moveSpeed: 5
-  rotationSpeed: 10
-  rb: {fileID: 0}
-  animator: {fileID: 0}
-  movementInput: {x: 0, y: 0, z: 0}
-  velocityHash: 0
-  _networkInputActive: 0
+  healthManager: {fileID: 0}
+  heartPrefab: {fileID: 0}
+  maxHearts: 5
+  heartSpacing: 60
 --- !u!114 &1730378799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24384,13 +24374,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59c5fe6e3cd8b6c46b0d8084cfadbd5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterMovement
-  moveSpeed: 5
-  rotationSpeed: 10
-  rb: {fileID: 0}
-  animator: {fileID: 0}
-  movementInput: {x: 0, y: 0, z: 0}
-  velocityHash: 0
-  _networkInputActive: 0
 --- !u!1001 &1983984857
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25077,13 +25060,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59c5fe6e3cd8b6c46b0d8084cfadbd5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterMovement
-  moveSpeed: 5
-  rotationSpeed: 10
-  rb: {fileID: 0}
-  animator: {fileID: 0}
-  movementInput: {x: 0, y: 0, z: 0}
-  velocityHash: 0
-  _networkInputActive: 0
 --- !u!65 &2004373396
 BoxCollider:
   m_ObjectHideFlags: 0
