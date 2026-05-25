@@ -22041,6 +22041,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd5fb9b4a3a2f422b85491b8423540c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterMovement
+  moveSpeed: 100
 --- !u!65 &1685849904
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22217,8 +22218,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59c5fe6e3cd8b6c46b0d8084cfadbd5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterMovement
-  moveSpeed: 5
-  rotationSpeed: 10
 --- !u!65 &1739909831
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22460,6 +22459,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ee0e0231de10450bae002637243b631, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GraphicRaycaster
+  maxHp: 10000
+  OnHpChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1778423831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22472,6 +22475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd5fb9b4a3a2f422b85491b8423540c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
+  moveSpeed: 100
 --- !u!223 &1778423832
 Canvas:
   m_ObjectHideFlags: 0
@@ -23320,8 +23324,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59c5fe6e3cd8b6c46b0d8084cfadbd5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterMovement
-  moveSpeed: 5
-  rotationSpeed: 10
 --- !u!64 &1983984860
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -23457,6 +23459,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd5fb9b4a3a2f422b85491b8423540c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterMovement
+  moveSpeed: 100
 --- !u!65 &2004373396
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23884,6 +23887,8 @@ MonoBehaviour:
   assassinMovement: {fileID: 2002449238}
   sorcererMovement: {fileID: 1730378800}
   dmMovement: {fileID: 1963625892}
+  leaf: {fileID: 508134782}
+  fire: {fileID: 1164224417}
 --- !u!114 &2044340791
 MonoBehaviour:
   m_ObjectHideFlags: 0
