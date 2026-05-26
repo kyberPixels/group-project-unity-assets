@@ -25,8 +25,17 @@ public class ParticleHitDetector : MonoBehaviour
 
     private int _hitCount = 0;
 
+    private void Start()
+    {
+        string tags = hostileParticleTags.Count > 0 ? string.Join(", ", hostileParticleTags) : "NONE";
+        Debug.Log($"[ParticleHitDetector] {gameObject.name} ready — listening for tags: [{tags}] | threshold: {particlesPerHit}");
+    }
+
     private void OnParticleCollision(GameObject other)
     {
+        // Diagnostic: log every collision so we can see if the callback fires at all
+        Debug.Log($"[ParticleHitDetector] {gameObject.name} received particle from \"{other.name}\" (tag: \"{other.tag}\")");
+
         if (hostileParticleTags.Count == 0)
         {
             Debug.LogWarning($"[ParticleHitDetector] {gameObject.name}: hostileParticleTags is empty — no collisions will register.");
@@ -43,7 +52,11 @@ public class ParticleHitDetector : MonoBehaviour
             }
         }
 
-        if (!isHostile) return;
+        if (!isHostile)
+        {
+            Debug.LogWarning($"[ParticleHitDetector] {gameObject.name}: tag \"{other.tag}\" is not in the hostile list — ignoring.");
+            return;
+        }
 
         _hitCount++;
 
