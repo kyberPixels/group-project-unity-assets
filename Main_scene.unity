@@ -7271,13 +7271,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 508134779}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.13453762, y: -0.0000000037252899, z: 0.000000004190951, w: 0.9909085}
-  m_LocalPosition: {x: 0, y: 0.15, z: 0.53}
+  m_LocalRotation: {x: 0.16208135, y: -0.000000014901158, z: 0.000000041909505, w: 0.9867775}
+  m_LocalPosition: {x: -0.00000021606684, y: 0.14999995, z: 0.5299998}
   m_LocalScale: {x: 1, y: 1, z: 1.419368}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1111732313}
-  m_LocalEulerAnglesHint: {x: -15.464, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 18.655, y: 0, z: 0}
 --- !u!199 &508134781
 ParticleSystemRenderer:
   serializedVersion: 7
@@ -14102,6 +14102,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 090e386929455474a8d6dbe09d26457a, type: 2}
+    - target: {fileID: 9500000, guid: 2f4e6492f506bbb4a8aeba850e3bb52f, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 13700000, guid: 2f4e6492f506bbb4a8aeba850e3bb52f, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -32127,7 +32131,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1778423833}
   - component: {fileID: 1778423832}
-  - component: {fileID: 1778423831}
   - component: {fileID: 1778423830}
   m_Layer: 5
   m_Name: 'Game events '
@@ -32152,20 +32155,6 @@ MonoBehaviour:
   OnHpChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1778423831
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1778423829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd5fb9b4a3a2f422b85491b8423540c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  moveSpeed: 100
-  animator: {fileID: 0}
 --- !u!223 &1778423832
 Canvas:
   m_ObjectHideFlags: 0
@@ -33114,7 +33103,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 52ea76ffec8c6418098ef4c65583321c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
@@ -33703,14 +33692,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2060343856}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0.7071068, w: 0}
-  m_LocalPosition: {x: -0.30000007, y: -0, z: 0}
+  m_LocalRotation: {x: -0.78422886, y: -0.20934951, z: -0.5521617, w: 0.19046089}
+  m_LocalPosition: {x: -0.36081728, y: 0.45165128, z: -0.0000032186508}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7621589704276654061}
   m_Father: {fileID: 4098208463768353314}
-  m_LocalEulerAnglesHint: {x: -180, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: -148, y: -68, z: -8}
 --- !u!199 &2060343858
 ParticleSystemRenderer:
   serializedVersion: 7
@@ -33864,7 +33853,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -45273,7 +45262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterMovement2
   moveSpeed: 100
-  animator: {fileID: 0}
+  animator: {fileID: 3662611129456351795}
 --- !u!114 &3662611129456351797
 MonoBehaviour:
   m_ObjectHideFlags: 0
