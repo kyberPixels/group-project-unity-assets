@@ -152,7 +152,7 @@ public class SupabaseRealtimeClient : MonoBehaviour
             WsData d = msg.payload.data;
             WsRecord r = d.record;
 
-            Debug.Log($"[Supabase] Parsed — table={d.table} | event_type={r.event_type} | action={r.action_name} | die={r.die_type}:{r.die_result} | vel={r.velocity} | rot={r.rotation}");
+            Debug.Log($"[Supabase] Parsed — table={d.table} | state_type={r.state_type} | event_type={r.event_type} | action={r.action_name} | die={r.die_type}:{r.die_result} | vel={r.velocity} | rot={r.rotation}");
 
             if (d.table == "player_state")
             {
