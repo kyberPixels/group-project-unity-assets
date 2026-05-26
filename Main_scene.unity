@@ -4350,7 +4350,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 4
     type: 0
     collisionMode: 0
@@ -4527,7 +4527,7 @@ ParticleSystem:
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
@@ -7271,13 +7271,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 508134779}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.13453762, y: -0.0000000037252899, z: 0.000000004190951, w: 0.9909085}
-  m_LocalPosition: {x: 0, y: 0.15, z: 0.53}
+  m_LocalRotation: {x: 0.16208135, y: -0.000000014901158, z: 0.000000041909505, w: 0.9867775}
+  m_LocalPosition: {x: -0.00000021606684, y: 0.14999995, z: 0.5299998}
   m_LocalScale: {x: 1, y: 1, z: 1.419368}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1111732313}
-  m_LocalEulerAnglesHint: {x: -15.464, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 18.655, y: 0, z: 0}
 --- !u!199 &508134781
 ParticleSystemRenderer:
   serializedVersion: 7
@@ -11121,7 +11121,7 @@ ParticleSystem:
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
@@ -14102,6 +14102,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 090e386929455474a8d6dbe09d26457a, type: 2}
+    - target: {fileID: 9500000, guid: 2f4e6492f506bbb4a8aeba850e3bb52f, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 13700000, guid: 2f4e6492f506bbb4a8aeba850e3bb52f, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -14122,6 +14126,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100002, guid: 2f4e6492f506bbb4a8aeba850e3bb52f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1963625892}
+    - targetCorrespondingSourceObject: {fileID: 100002, guid: 2f4e6492f506bbb4a8aeba850e3bb52f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1963625894}
+    - targetCorrespondingSourceObject: {fileID: 100002, guid: 2f4e6492f506bbb4a8aeba850e3bb52f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1963625893}
   m_SourcePrefab: {fileID: 100100000, guid: 2f4e6492f506bbb4a8aeba850e3bb52f, type: 3}
 --- !u!4 &779436737 stripped
 Transform:
@@ -15906,6 +15916,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1372166752363329700, guid: 694964309b7b24b57ac84dfa2a6f2889, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1730378799}
+    - targetCorrespondingSourceObject: {fileID: 1372166752363329700, guid: 694964309b7b24b57ac84dfa2a6f2889, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1730378801}
+    - targetCorrespondingSourceObject: {fileID: 1372166752363329700, guid: 694964309b7b24b57ac84dfa2a6f2889, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1730378802}
     - targetCorrespondingSourceObject: {fileID: 3279247931812673668, guid: 694964309b7b24b57ac84dfa2a6f2889, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1111732315}
@@ -20196,7 +20212,7 @@ ParticleSystem:
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
@@ -31907,6 +31923,42 @@ MonoBehaviour:
   OnHpChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!65 &1730378801
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136988275}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1730378802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136988275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fcc91ffaeaa847e48cfb5c4115cea63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ParticleHitDetector
+  hostileParticleTags:
+  - Fire
+  particlesPerHit: 25
 --- !u!65 &1739909831
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32127,7 +32179,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1778423833}
   - component: {fileID: 1778423832}
-  - component: {fileID: 1778423831}
   - component: {fileID: 1778423830}
   m_Layer: 5
   m_Name: 'Game events '
@@ -32152,20 +32203,6 @@ MonoBehaviour:
   OnHpChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1778423831
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1778423829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd5fb9b4a3a2f422b85491b8423540c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  moveSpeed: 100
-  animator: {fileID: 0}
 --- !u!223 &1778423832
 Canvas:
   m_ObjectHideFlags: 0
@@ -33016,6 +33053,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharacterMovement
   moveSpeed: 100
   animator: {fileID: 1963625890}
+--- !u!114 &1963625893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544413027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fcc91ffaeaa847e48cfb5c4115cea63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ParticleHitDetector
+  hostileParticleTags:
+  - Leaf
+  - Dagger
+  - Arrow
+  particlesPerHit: 25
+--- !u!65 &1963625894
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544413027}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!64 &1983984860
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -33114,7 +33189,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 52ea76ffec8c6418098ef4c65583321c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
@@ -33703,14 +33778,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2060343856}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0.7071068, w: 0}
-  m_LocalPosition: {x: -0.30000007, y: -0, z: 0}
+  m_LocalRotation: {x: -0.78422886, y: -0.20934951, z: -0.5521617, w: 0.19046089}
+  m_LocalPosition: {x: -0.36081728, y: 0.45165128, z: -0.0000032186508}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7621589704276654061}
   m_Father: {fileID: 4098208463768353314}
-  m_LocalEulerAnglesHint: {x: -180, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: -148, y: -68, z: -8}
 --- !u!199 &2060343858
 ParticleSystemRenderer:
   serializedVersion: 7
@@ -33864,7 +33939,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -37444,7 +37519,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 4
     type: 0
     collisionMode: 0
@@ -37621,7 +37696,7 @@ ParticleSystem:
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
@@ -39348,6 +39423,8 @@ GameObject:
   - component: {fileID: 2002449236}
   - component: {fileID: 2002449237}
   - component: {fileID: 2002449238}
+  - component: {fileID: 919132147783829898}
+  - component: {fileID: 919132147783829897}
   m_Layer: 6
   m_Name: KATARINA
   m_TagString: P1_Katarina
@@ -39355,6 +39432,42 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &919132147783829897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132147783829896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fcc91ffaeaa847e48cfb5c4115cea63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ParticleHitDetector
+  hostileParticleTags:
+  - Fire
+  particlesPerHit: 25
+--- !u!65 &919132147783829898
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132147783829896}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &924864605894925466
 GameObject:
   m_ObjectHideFlags: 0
@@ -44001,7 +44114,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 4
     type: 0
     collisionMode: 0
@@ -44178,7 +44291,7 @@ ParticleSystem:
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
@@ -45273,7 +45386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterMovement2
   moveSpeed: 100
-  animator: {fileID: 0}
+  animator: {fileID: 3662611129456351795}
 --- !u!114 &3662611129456351797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45290,6 +45403,42 @@ MonoBehaviour:
   OnHpChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3662611129456351798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1303707305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fcc91ffaeaa847e48cfb5c4115cea63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ParticleHitDetector
+  hostileParticleTags:
+  - Fire
+  particlesPerHit: 25
+--- !u!65 &3662611129456351799
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1303707305}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3701170418822139549
 GameObject:
   m_ObjectHideFlags: 0
@@ -55933,6 +56082,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5411724291880914366, guid: 0c91c0b0f6919bd4db3aac90d6b3f3ed, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3662611129456351796}
+    - targetCorrespondingSourceObject: {fileID: 5411724291880914366, guid: 0c91c0b0f6919bd4db3aac90d6b3f3ed, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3662611129456351799}
+    - targetCorrespondingSourceObject: {fileID: 5411724291880914366, guid: 0c91c0b0f6919bd4db3aac90d6b3f3ed, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3662611129456351798}
   m_SourcePrefab: {fileID: 100100000, guid: 0c91c0b0f6919bd4db3aac90d6b3f3ed, type: 3}
 --- !u!4 &6214795750869440690
 Transform:
