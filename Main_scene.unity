@@ -11011,9 +11011,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1372166752363329700, guid: 694964309b7b24b57ac84dfa2a6f2889, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1730378799}
-    - targetCorrespondingSourceObject: {fileID: 1372166752363329700, guid: 694964309b7b24b57ac84dfa2a6f2889, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1730378800}
     - targetCorrespondingSourceObject: {fileID: 3279247931812673668, guid: 694964309b7b24b57ac84dfa2a6f2889, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1111732315}
@@ -22041,6 +22038,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd5fb9b4a3a2f422b85491b8423540c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterMovement
+  moveSpeed: 100
+  animator: {fileID: 0}
 --- !u!65 &1685849904
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22186,9 +22185,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 136988275}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17ad36be874a344ff9cfafe74c832067, type: 3}
+  m_Script: {fileID: 11500000, guid: bd5fb9b4a3a2f422b85491b8423540c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::manoController
+  moveSpeed: 100
+  animator: {fileID: 0}
 --- !u!114 &1730378799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22205,20 +22206,6 @@ MonoBehaviour:
   OnHpChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1730378800
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 136988275}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59c5fe6e3cd8b6c46b0d8084cfadbd5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CharacterMovement
-  moveSpeed: 5
-  rotationSpeed: 10
 --- !u!65 &1739909831
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22439,8 +22426,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1778423833}
   - component: {fileID: 1778423832}
-  - component: {fileID: 1778423831}
   - component: {fileID: 1778423830}
+  - component: {fileID: 1778423834}
   m_Layer: 5
   m_Name: 'Game events '
   m_TagString: Untagged
@@ -22460,18 +22447,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ee0e0231de10450bae002637243b631, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GraphicRaycaster
---- !u!114 &1778423831
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1778423829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd5fb9b4a3a2f422b85491b8423540c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
+  maxHp: 10000
+  OnHpChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!223 &1778423832
 Canvas:
   m_ObjectHideFlags: 0
@@ -22515,6 +22494,30 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1778423834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778423829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94a048294ea6c4bd197dfc5494b9caf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameEventListener
+  realtimeClient: {fileID: 0}
+  archerAnimator: {fileID: 5866666020617942575}
+  assassinAnimator: {fileID: 2002449236}
+  sorcererAnimator: {fileID: 1730378797}
+  dmAnimator: {fileID: 1963625890}
+  diceResultText: {fileID: 1800402599}
+  archerMovement: {fileID: 1684864696}
+  assassinMovement: {fileID: 2002449238}
+  sorcererMovement: {fileID: 1730378798}
+  dmMovement: {fileID: 0}
+  leaf: {fileID: 508134782}
+  fire: {fileID: 1164224417}
 --- !u!65 &1787551210
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23320,8 +23323,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59c5fe6e3cd8b6c46b0d8084cfadbd5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterMovement
-  moveSpeed: 5
-  rotationSpeed: 10
 --- !u!64 &1983984860
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -23457,6 +23458,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd5fb9b4a3a2f422b85491b8423540c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterMovement
+  moveSpeed: 100
+  animator: {fileID: 0}
 --- !u!65 &2004373396
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23882,8 +23885,10 @@ MonoBehaviour:
   diceResultText: {fileID: 1800402599}
   archerMovement: {fileID: 1684864696}
   assassinMovement: {fileID: 2002449238}
-  sorcererMovement: {fileID: 1730378800}
+  sorcererMovement: {fileID: 0}
   dmMovement: {fileID: 1963625892}
+  leaf: {fileID: 508134782}
+  fire: {fileID: 1164224417}
 --- !u!114 &2044340791
 MonoBehaviour:
   m_ObjectHideFlags: 0
