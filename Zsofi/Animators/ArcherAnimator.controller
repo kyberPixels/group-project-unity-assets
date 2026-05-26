@@ -125,7 +125,7 @@ AnimatorStateTransition:
   m_TransitionDuration: 0.25
   m_TransitionOffset: 0
   m_ExitTime: 0.97424895
-  m_HasExitTime: 1
+  m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
@@ -149,7 +149,7 @@ AnimatorController:
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
-    m_DefaultBool: 0
+    m_DefaultBool: 1
     m_Controller: {fileID: 9100000}
   - m_Name: archer_die
     m_Type: 9
@@ -190,7 +190,7 @@ AnimatorStateTransition:
   m_TransitionDuration: 0.25
   m_TransitionOffset: 0
   m_ExitTime: 0.97424895
-  m_HasExitTime: 1
+  m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
@@ -242,7 +242,7 @@ AnimatorStateTransition:
   m_TransitionDuration: 0.25
   m_TransitionOffset: 0
   m_ExitTime: 0.97424895
-  m_HasExitTime: 1
+  m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
@@ -258,24 +258,24 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -6150514933047857155}
-    m_Position: {x: 380, y: 240, z: 0}
+    m_Position: {x: -420, y: 90, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8541639314120789243}
-    m_Position: {x: 380, y: 120, z: 0}
+    m_Position: {x: -420, y: -30, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2637777688608691410}
-    m_Position: {x: 70, y: 120, z: 0}
+    m_Position: {x: -730, y: -30, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 771779062988984624}
-    m_Position: {x: 680, y: 110, z: 0}
+    m_Position: {x: -120, y: -40, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 90, y: -60, z: 0}
-  m_EntryPosition: {x: 400, y: -20, z: 0}
-  m_ExitPosition: {x: 700, y: 240, z: 0}
+  m_AnyStatePosition: {x: -710, y: -210, z: 0}
+  m_EntryPosition: {x: -400, y: -170, z: 0}
+  m_ExitPosition: {x: -100, y: 90, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: -8541639314120789243}
 --- !u!1101 &7475148206002985611
