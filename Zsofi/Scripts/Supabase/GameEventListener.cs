@@ -17,6 +17,10 @@ public class GameEventListener : MonoBehaviour
     [SerializeField] private CharacterMovement2 dmMovement;
     public ParticleSystem leaf;
     public ParticleSystem fire;
+    public ParticleSystem arrow;
+    public ParticleSystem dragger1;
+    public ParticleSystem dragger2;
+
 
     void OnEnable()
     {
@@ -72,6 +76,9 @@ public class GameEventListener : MonoBehaviour
         target.SetTrigger(actionName);
         if (actionName == "sorcerer_fight") leaf.Play();
         if (actionName == "dm_fight") fire.Play();
+        if (actionName == "archer_fight") arrow.Play();
+        if (actionName == "assassin_fight") dragger1.Play();
+        if (actionName == "assassin_fight") dragger2.Play();
     }
 
     void HandleDieRoll(string dieType, int dieResult)
