@@ -2370,7 +2370,7 @@ MonoBehaviour:
   characterId: archer
   hostileParticleTags:
   - Fire
-  healthManager: {fileID: 0}
+  healthManager: {fileID: 503342219}
 --- !u!54 &503342217
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2398,6 +2398,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &503342219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503342212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ee0e0231de10450bae002637243b631, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthManager
+  maxHp: 100
+  OnHpChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &508134779
 GameObject:
   m_ObjectHideFlags: 0
@@ -8919,6 +8935,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 100040, guid: 2f4e6492f506bbb4a8aeba850e3bb52f, type: 3}
+      propertyPath: m_Name
+      value: dm_mesh
+      objectReference: {fileID: 0}
+    - target: {fileID: 100040, guid: 2f4e6492f506bbb4a8aeba850e3bb52f, type: 3}
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
@@ -9210,9 +9230,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 100002, guid: 2f4e6492f506bbb4a8aeba850e3bb52f, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1963625891}
-    - targetCorrespondingSourceObject: {fileID: 100002, guid: 2f4e6492f506bbb4a8aeba850e3bb52f, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1963625892}
     - targetCorrespondingSourceObject: {fileID: 100040, guid: 2f4e6492f506bbb4a8aeba850e3bb52f, type: 3}
       insertIndex: -1
@@ -9223,6 +9240,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100040, guid: 2f4e6492f506bbb4a8aeba850e3bb52f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 913595298}
+    - targetCorrespondingSourceObject: {fileID: 100040, guid: 2f4e6492f506bbb4a8aeba850e3bb52f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 913595300}
   m_SourcePrefab: {fileID: 100100000, guid: 2f4e6492f506bbb4a8aeba850e3bb52f, type: 3}
 --- !u!4 &779436737 stripped
 Transform:
@@ -9572,11 +9592,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9806564d8f12a44db9e9843a8fd34dcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HeartHealthBar
-  healthManager: {fileID: 1730378799}
+  healthManager: {fileID: 0}
   heartPrefab: {fileID: 919132149155446097, guid: 81990b1212ea60b40a40b25139f973be, type: 3}
   maxHearts: 5
   heartSpacing: 6
-  animator: {fileID: 0}
+  animator: {fileID: 1730378797}
 --- !u!114 &893244658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9702,7 +9722,23 @@ MonoBehaviour:
   - Leaf
   - Arrow
   - dagger
-  healthManager: {fileID: 0}
+  healthManager: {fileID: 913595300}
+--- !u!114 &913595300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913595294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ee0e0231de10450bae002637243b631, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthManager
+  maxHp: 100
+  OnHpChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &914080424
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10893,6 +10929,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3279247931812673668, guid: 694964309b7b24b57ac84dfa2a6f2889, type: 3}
+      propertyPath: m_Name
+      value: sorcerer_mesh
+      objectReference: {fileID: 0}
+    - target: {fileID: 3279247931812673668, guid: 694964309b7b24b57ac84dfa2a6f2889, type: 3}
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
@@ -11077,9 +11117,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1372166752363329700, guid: 694964309b7b24b57ac84dfa2a6f2889, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1730378798}
-    - targetCorrespondingSourceObject: {fileID: 1372166752363329700, guid: 694964309b7b24b57ac84dfa2a6f2889, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1730378799}
     - targetCorrespondingSourceObject: {fileID: 3279247931812673668, guid: 694964309b7b24b57ac84dfa2a6f2889, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1111732315}
@@ -11089,6 +11126,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3279247931812673668, guid: 694964309b7b24b57ac84dfa2a6f2889, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1111732319}
+    - targetCorrespondingSourceObject: {fileID: 3279247931812673668, guid: 694964309b7b24b57ac84dfa2a6f2889, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1111732320}
   m_SourcePrefab: {fileID: 100100000, guid: 694964309b7b24b57ac84dfa2a6f2889, type: 3}
 --- !u!4 &1111732313 stripped
 Transform:
@@ -11164,7 +11204,23 @@ MonoBehaviour:
   characterId: sorcerer
   hostileParticleTags:
   - Fire
-  healthManager: {fileID: 0}
+  healthManager: {fileID: 1111732320}
+--- !u!114 &1111732320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111732314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ee0e0231de10450bae002637243b631, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthManager
+  maxHp: 100
+  OnHpChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &1113230195
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19379,7 +19435,7 @@ MonoBehaviour:
   heartPrefab: {fileID: 919132149155446097, guid: 81990b1212ea60b40a40b25139f973be, type: 3}
   maxHearts: 5
   heartSpacing: 6
-  animator: {fileID: 0}
+  animator: {fileID: 3662611129456351795}
 --- !u!114 &1479012857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22283,22 +22339,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::manoController
   moveSpeed: 100
   animator: {fileID: 1730378797}
---- !u!114 &1730378799
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 136988275}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ee0e0231de10450bae002637243b631, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HealthManager
-  maxHp: 1000
-  OnHpChanged:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!65 &1739909831
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23363,22 +23403,6 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 9500000, guid: 2f4e6492f506bbb4a8aeba850e3bb52f, type: 3}
   m_PrefabInstance: {fileID: 779436736}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1963625891
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 544413027}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ee0e0231de10450bae002637243b631, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HealthManager
-  maxHp: 100
-  OnHpChanged:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &1963625892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28933,11 +28957,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9806564d8f12a44db9e9843a8fd34dcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HeartHealthBar
-  healthManager: {fileID: 1963625891}
+  healthManager: {fileID: 0}
   heartPrefab: {fileID: 919132149155446097, guid: 81990b1212ea60b40a40b25139f973be, type: 3}
   maxHearts: 5
   heartSpacing: 5
-  animator: {fileID: 0}
+  animator: {fileID: 1963625890}
 --- !u!114 &2065189211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29391,22 +29415,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharacterMovement2
   moveSpeed: 100
   animator: {fileID: 3662611129456351795}
---- !u!114 &3662611129456351797
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1303707305}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ee0e0231de10450bae002637243b631, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HealthManager
-  maxHp: 100
-  OnHpChanged:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!4 &4098208463768353314 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3468591843359781271, guid: 0c91c0b0f6919bd4db3aac90d6b3f3ed, type: 3}
@@ -34311,6 +34319,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1675199448286660704, guid: 0c91c0b0f6919bd4db3aac90d6b3f3ed, type: 3}
+      propertyPath: m_Name
+      value: archer_mesh
+      objectReference: {fileID: 0}
+    - target: {fileID: 1675199448286660704, guid: 0c91c0b0f6919bd4db3aac90d6b3f3ed, type: 3}
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
@@ -34938,9 +34950,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5411724291880914366, guid: 0c91c0b0f6919bd4db3aac90d6b3f3ed, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3662611129456351797}
-    - targetCorrespondingSourceObject: {fileID: 5411724291880914366, guid: 0c91c0b0f6919bd4db3aac90d6b3f3ed, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 3662611129456351796}
     - targetCorrespondingSourceObject: {fileID: 1675199448286660704, guid: 0c91c0b0f6919bd4db3aac90d6b3f3ed, type: 3}
       insertIndex: -1
@@ -34948,6 +34957,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1675199448286660704, guid: 0c91c0b0f6919bd4db3aac90d6b3f3ed, type: 3}
       insertIndex: -1
       addedObject: {fileID: 503342216}
+    - targetCorrespondingSourceObject: {fileID: 1675199448286660704, guid: 0c91c0b0f6919bd4db3aac90d6b3f3ed, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 503342219}
   m_SourcePrefab: {fileID: 100100000, guid: 0c91c0b0f6919bd4db3aac90d6b3f3ed, type: 3}
 --- !u!1001 &6637646392846686336
 PrefabInstance:
