@@ -247,7 +247,7 @@ ModelImporter:
     - name: "\u80A9.L"
       parentName: "\u4E0A\u534A\u8EAB2"
       position: {x: -0.008898839, y: 0.024917066, z: -0.002132997}
-      rotation: {x: -0.41465393, y: 0.39127582, z: 0.5573531, w: 0.6035916}
+      rotation: {x: -0.41465396, y: 0.39127585, z: 0.55735314, w: 0.6035917}
       scale: {x: 0.99999976, y: 0.9999997, z: 0.99999994}
     - name: "\u8155.L"
       parentName: "\u80A9.L"
@@ -257,7 +257,7 @@ ModelImporter:
     - name: "\u3072\u3058.L"
       parentName: "\u8155.L"
       position: {x: -0, y: 0.02589003, z: 0.000000005959411}
-      rotation: {x: 0.024240602, y: -0.00031159815, z: 0.034369808, w: 0.9991151}
+      rotation: {x: 0.024240602, y: -0.00031159818, z: 0.034369808, w: 0.99911517}
       scale: {x: 1, y: 0.99999994, z: 1.0000001}
     - name: "\u624B\u9996.L"
       parentName: "\u3072\u3058.L"
@@ -597,7 +597,7 @@ ModelImporter:
     - name: "\u76EE.R"
       parentName: "\u982D"
       position: {x: 0.0028973909, y: 0.00783096, z: 0.0031886366}
-      rotation: {x: -0.13006328, y: -0.20580147, z: 0.011517225, w: 0.9698436}
+      rotation: {x: -0.1300633, y: -0.20580147, z: 0.011517226, w: 0.9698436}
       scale: {x: 1, y: 1, z: 1}
     - name: "\u76EE.R_end"
       parentName: "\u76EE.R"
