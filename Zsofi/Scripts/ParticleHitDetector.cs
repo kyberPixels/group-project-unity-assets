@@ -69,6 +69,18 @@ public class ParticleHitDetector : MonoBehaviour
     private IEnumerator SettleDamage()
     {
         yield return new WaitForSeconds(0.5f);
+
+        // If the last roller was a player (not DM), only that player can be attacked by DM particles
+        string lastRoller = GameEventListener.LastDiceRollingCharacter;
+        bool dmIsAttacking = characterId != "dm";
+        bool playerRolledLast = !string.IsNullOrEmpty(lastRoller) && lastRoller != "dm";
+        if (dmIsAttacking && playerRolledLast && characterId != lastRoller)
+        {
+            _accumulatedHits = 0;
+            _settleCoroutine = null;
+            yield break;
+        }
+
         int dice = Mathf.Max(1, GameEventListener.LastDiceResult);
         int damage = _accumulatedHits * dice;
         Debug.Log($"[ParticleHit] {gameObject.name} — {_accumulatedHits} particles × dice {dice} = {damage} damage");
