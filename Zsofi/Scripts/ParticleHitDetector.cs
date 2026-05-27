@@ -13,29 +13,39 @@ using UnityEngine;
 //   3. Tag the particle system's GameObject with one of the hostile tags listed below.
 public class ParticleHitDetector : MonoBehaviour
 {
+    [Header("Character Identity")]
+    [Tooltip("Set to the character prefix: archer, assassin, sorcerer, or dm")]
+    [SerializeField] private string characterId;
+
     [Header("Hostile Particle Tags")]
     [Tooltip("Tags of particle system GameObjects that can hit this character.\n" +
              "Players: add the enemy's particle tag.\n" +
              "Enemy: add each player's particle tag.")]
     public List<string> hostileParticleTags = new List<string>();
 
-    [Header("Hit Threshold")]
-    [Tooltip("How many individual particle sparks count as one hit event (prevents log spam).")]
-    public int particlesPerHit = 25;
+    private static readonly Dictionary<string, ParticleHitDetector> _registry =
+        new Dictionary<string, ParticleHitDetector>();
 
-    private int _hitCount = 0;
+    private void Awake()
+    {
+        if (!string.IsNullOrEmpty(characterId))
+            _registry[characterId] = this;
+    }
+
+    private void OnDestroy()
+    {
+        if (!string.IsNullOrEmpty(characterId) && _registry.ContainsKey(characterId))
+            _registry.Remove(characterId);
+    }
 
     private void Start()
     {
         string tags = hostileParticleTags.Count > 0 ? string.Join(", ", hostileParticleTags) : "NONE";
-        Debug.Log($"[ParticleHitDetector] {gameObject.name} ready — listening for tags: [{tags}] | threshold: {particlesPerHit}");
+        Debug.Log($"[ParticleHitDetector] {gameObject.name} ready — listening for tags: [{tags}]");
     }
 
     private void OnParticleCollision(GameObject other)
     {
-        // Diagnostic: log every collision so we can see if the callback fires at all
-        Debug.Log($"[ParticleHitDetector] {gameObject.name} received particle from \"{other.name}\" (tag: \"{other.tag}\")");
-
         if (hostileParticleTags.Count == 0)
         {
             Debug.LogWarning($"[ParticleHitDetector] {gameObject.name}: hostileParticleTags is empty — no collisions will register.");
@@ -52,18 +62,25 @@ public class ParticleHitDetector : MonoBehaviour
             }
         }
 
-        if (!isHostile)
+        if (!isHostile) return;
+
+        string activeRoller = GameEventListener.LastDiceRollingCharacter;
+
+        if (!string.IsNullOrEmpty(activeRoller) && activeRoller != characterId)
         {
-            Debug.LogWarning($"[ParticleHitDetector] {gameObject.name}: tag \"{other.tag}\" is not in the hostile list — ignoring.");
+            // Particles hit the wrong character physically — redirect to the correct one
+            if (_registry.TryGetValue(activeRoller, out ParticleHitDetector target))
+                target.RegisterHit(other);
+            else
+                Debug.LogWarning($"[ParticleHitDetector] No registered detector for active roller \"{activeRoller}\"");
             return;
         }
 
-        _hitCount++;
+        RegisterHit(other);
+    }
 
-        if (_hitCount >= particlesPerHit)
-        {
-            _hitCount = 0;
-            Debug.Log($"[ParticleHit] {gameObject.name} was hit by particles from \"{other.name}\" (tag: {other.tag})");
-        }
+    private void RegisterHit(GameObject other)
+    {
+        Debug.Log($"[ParticleHit] {gameObject.name} was hit by particles from \"{other.name}\" (tag: {other.tag})");
     }
 }
