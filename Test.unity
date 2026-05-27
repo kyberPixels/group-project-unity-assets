@@ -2370,6 +2370,7 @@ MonoBehaviour:
   characterId: archer
   hostileParticleTags:
   - Fire
+  healthManager: {fileID: 0}
 --- !u!54 &503342217
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8843,7 +8844,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 2f4e6492f506bbb4a8aeba850e3bb52f, type: 3}
       propertyPath: m_TagString
-      value: DM_Dragon
+      value: dm
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: 2f4e6492f506bbb4a8aeba850e3bb52f, type: 3}
       propertyPath: m_Layer
@@ -9575,6 +9576,7 @@ MonoBehaviour:
   heartPrefab: {fileID: 919132149155446097, guid: 81990b1212ea60b40a40b25139f973be, type: 3}
   maxHearts: 5
   heartSpacing: 6
+  animator: {fileID: 0}
 --- !u!114 &893244658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9700,6 +9702,7 @@ MonoBehaviour:
   - Leaf
   - Arrow
   - dagger
+  healthManager: {fileID: 0}
 --- !u!65 &914080424
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10779,7 +10782,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1372166752363329700, guid: 694964309b7b24b57ac84dfa2a6f2889, type: 3}
       propertyPath: m_TagString
-      value: P2_Mano
+      value: sorcerer
       objectReference: {fileID: 0}
     - target: {fileID: 1747742764244132382, guid: 694964309b7b24b57ac84dfa2a6f2889, type: 3}
       propertyPath: m_LocalScale.x
@@ -11161,6 +11164,7 @@ MonoBehaviour:
   characterId: sorcerer
   hostileParticleTags:
   - Fire
+  healthManager: {fileID: 0}
 --- !u!65 &1113230195
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19375,6 +19379,7 @@ MonoBehaviour:
   heartPrefab: {fileID: 919132149155446097, guid: 81990b1212ea60b40a40b25139f973be, type: 3}
   maxHearts: 5
   heartSpacing: 6
+  animator: {fileID: 0}
 --- !u!114 &1479012857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23370,7 +23375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ee0e0231de10450bae002637243b631, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthManager
-  maxHp: 1000
+  maxHp: 100
   OnHpChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -28932,6 +28937,7 @@ MonoBehaviour:
   heartPrefab: {fileID: 919132149155446097, guid: 81990b1212ea60b40a40b25139f973be, type: 3}
   maxHearts: 5
   heartSpacing: 5
+  animator: {fileID: 0}
 --- !u!114 &2065189211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29397,7 +29403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ee0e0231de10450bae002637243b631, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthManager
-  maxHp: 10000
+  maxHp: 100
   OnHpChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -34642,7 +34648,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5411724291880914366, guid: 0c91c0b0f6919bd4db3aac90d6b3f3ed, type: 3}
       propertyPath: m_TagString
-      value: P1_Ashe
+      value: archer
       objectReference: {fileID: 0}
     - target: {fileID: 5444269370186886179, guid: 0c91c0b0f6919bd4db3aac90d6b3f3ed, type: 3}
       propertyPath: m_Layer

@@ -5,6 +5,8 @@ using TMPro;
 public class GameEventListener : MonoBehaviour
 {
     public static string LastDiceRollingCharacter { get; private set; }
+    public static int LastDiceResult { get; private set; }
+    public static readonly Dictionary<string, int> LastDiceByCharacter = new Dictionary<string, int>();
 
     private readonly Dictionary<string, int> _lastKnownDiceResult = new Dictionary<string, int>();
 
@@ -26,13 +28,11 @@ public class GameEventListener : MonoBehaviour
     public ParticleSystem dragger1;
     public ParticleSystem dragger2;
 
-
     void OnEnable()
     {
         if (realtimeClient == null) { Debug.LogError("[GameEventListener] realtimeClient is not assigned in the Inspector!"); return; }
         realtimeClient.OnGameEvent += HandleGameEvent;
         realtimeClient.OnPlayerStateChange += HandlePlayerState;
-        Debug.Log("[GameEventListener] Subscribed to Supabase events.");
     }
 
     void OnDisable()
@@ -44,18 +44,14 @@ public class GameEventListener : MonoBehaviour
 
     void HandleGameEvent(GameEvent e)
     {
-        Debug.Log("Game event received: " + e.event_type + " / " + e.action_name);
-
         switch (e.event_type)
         {
             case "action":
                 HandleAction(e.action_name);
                 break;
-
             case "dice":
                 HandleDieRoll(e.die_type, e.die_result);
                 break;
-
             default:
                 Debug.LogWarning("Unknown event_type: " + e.event_type);
                 break;
@@ -66,10 +62,10 @@ public class GameEventListener : MonoBehaviour
     {
         Animator target = null;
 
-        if (actionName.StartsWith("archer_")) target = archerAnimator;
+        if (actionName.StartsWith("archer_"))        target = archerAnimator;
         else if (actionName.StartsWith("assassin_")) target = assassinAnimator;
         else if (actionName.StartsWith("sorcerer_")) target = sorcererAnimator;
-        else if (actionName.StartsWith("dm_")) target = dmAnimator;
+        else if (actionName.StartsWith("dm_"))       target = dmAnimator;
 
         if (target == null)
         {
@@ -77,11 +73,10 @@ public class GameEventListener : MonoBehaviour
             return;
         }
 
-        Debug.Log("Calling SetTrigger(\"" + actionName + "\") on: " + target.gameObject.name);
         target.SetTrigger(actionName);
         if (actionName == "sorcerer_fight") leaf.Play();
-        if (actionName == "dm_fight") fire.Play();
-        if (actionName == "archer_fight") arrow.Play();
+        if (actionName == "dm_fight")       fire.Play();
+        if (actionName == "archer_fight")   arrow.Play();
         if (actionName == "assassin_fight") dragger1.Play();
         if (actionName == "assassin_fight") dragger2.Play();
     }
@@ -90,14 +85,10 @@ public class GameEventListener : MonoBehaviour
     {
         if (diceResultText != null)
             diceResultText.text = dieType + ": " + dieResult;
-
-        Debug.Log("Die roll — " + dieType + " → " + dieResult);
     }
 
     void HandlePlayerState(PlayerState ps)
     {
-        Debug.Log($"[player_state] type={ps.state_type} | vel={ps.velocity} | rot={ps.rotation}");
-
         CharacterMovement2 target = null;
         string charId = null;
 
@@ -115,9 +106,11 @@ public class GameEventListener : MonoBehaviour
             if (ps.last_die_result > 0 && ps.last_die_result != prev)
             {
                 LastDiceRollingCharacter = charId;
-                Debug.Log($"[GameEventListener] Last dice roller → {charId} ({ps.last_die_result})");
+                LastDiceResult = ps.last_die_result;
+                Debug.Log($"[GameEventListener] Dice saved — {charId} rolled {ps.last_die_result}");
             }
             _lastKnownDiceResult[charId] = ps.last_die_result;
+            LastDiceByCharacter[charId] = ps.last_die_result;
         }
     }
 }

@@ -33209,6 +33209,7 @@ MonoBehaviour:
   - Leaf
   - Dagger
   - Arrow
+  healthManager: {fileID: 1963625891}
 --- !u!65 &1963625894
 BoxCollider:
   m_ObjectHideFlags: 0

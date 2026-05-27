@@ -7,6 +7,9 @@ public class HeartHealthBar : MonoBehaviour
     [SerializeField] private int maxHearts = 5;
     [SerializeField] private float heartSpacing = 60f;
 
+    [Header("Death")]
+    [SerializeField] private Animator animator;
+
     private GameObject[] _hearts;
 
     void Start()
@@ -19,16 +22,24 @@ public class HeartHealthBar : MonoBehaviour
         }
 
         healthManager.OnHpChanged.AddListener(Refresh);
-        Refresh(healthManager.CurrentHp);
     }
 
     void Refresh(int currentHp)
     {
         int hpPerHeart = healthManager.MaxHp / maxHearts;
-        int fullHearts = Mathf.CeilToInt((float)currentHp / hpPerHeart);
+        int heartsToKeep = currentHp > 0 ? Mathf.CeilToInt((float)currentHp / hpPerHeart) : 0;
 
-        for (int i = 0; i < maxHearts; i++)
-            _hearts[i].SetActive(i < fullHearts);
+        for (int i = heartsToKeep; i < maxHearts; i++)
+        {
+            if (_hearts[i] != null)
+            {
+                Destroy(_hearts[i]);
+                _hearts[i] = null;
+            }
+        }
+
+        if (currentHp <= 0 && animator != null)
+            animator.SetTrigger(healthManager.gameObject.tag + "_die");
     }
 
     void OnDestroy()

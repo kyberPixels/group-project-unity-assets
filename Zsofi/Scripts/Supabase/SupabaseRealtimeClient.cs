@@ -55,13 +55,10 @@ public class SupabaseRealtimeClient : MonoBehaviour
             .Replace("http://", "ws://");
         wsUrl += "/realtime/v1/websocket?apikey=" + config.anonKey + "&vsn=1.0.0";
 
-        Debug.Log("[Supabase] Connecting to: " + wsUrl);
-
         _socket = new WebSocket(wsUrl);
 
         _socket.OnOpen += () =>
         {
-            Debug.Log("[Supabase] WebSocket connected.");
             JoinChannel();
             StartCoroutine(HeartbeatLoop());
         };
@@ -69,12 +66,11 @@ public class SupabaseRealtimeClient : MonoBehaviour
         _socket.OnMessage += (bytes) =>
         {
             string json = System.Text.Encoding.UTF8.GetString(bytes);
-            Debug.Log("[Supabase] Raw message: " + json);
             HandleMessage(json);
         };
 
         _socket.OnError += (error) => Debug.LogError("[Supabase] WebSocket error: " + error);
-        _socket.OnClose += (code) => Debug.Log("[Supabase] WebSocket closed: " + code);
+        _socket.OnClose += (code) => { };
 
         await _socket.Connect();
     }
@@ -115,9 +111,7 @@ public class SupabaseRealtimeClient : MonoBehaviour
                 "\"ref\":\"" + _ref++ + "\"" +
             "}";
 
-        Debug.Log("[Supabase] Sending join: " + joinMsg);
         _ = _socket.SendText(joinMsg);
-        Debug.Log("[Supabase] Subscribed for group: " + groupId);
     }
 
     IEnumerator HeartbeatLoop()
@@ -132,13 +126,7 @@ public class SupabaseRealtimeClient : MonoBehaviour
 
     void HandleMessage(string json)
     {
-        if (!json.Contains("\"event\":\"postgres_changes\""))
-        {
-            Debug.Log("[Supabase] Skipped (not postgres_changes): " + json);
-            return;
-        }
-
-        Debug.Log("[Supabase] Handling postgres_changes message.");
+        if (!json.Contains("\"event\":\"postgres_changes\"")) return;
 
         try
         {
@@ -152,11 +140,8 @@ public class SupabaseRealtimeClient : MonoBehaviour
             WsData d = msg.payload.data;
             WsRecord r = d.record;
 
-            Debug.Log($"[Supabase] Parsed — table={d.table} | state_type={r.state_type} | event_type={r.event_type} | action={r.action_name} | die={r.die_type}:{r.die_result} | vel={r.velocity} | rot={r.rotation}");
-
             if (d.table == "player_state")
             {
-                Debug.Log($"[Supabase] → player_state update: user={r.user_id} vel={r.velocity} rot={r.rotation} die={r.last_die_type}({r.last_die_result})");
                 OnPlayerStateChange?.Invoke(new PlayerState
                 {
                     user_id = r.user_id,
@@ -170,7 +155,6 @@ public class SupabaseRealtimeClient : MonoBehaviour
             }
             else
             {
-                Debug.Log($"[Supabase] → game_event: type={r.event_type} action={r.action_name}");
                 OnGameEvent?.Invoke(new GameEvent
                 {
                     event_type = r.event_type,

@@ -1,16 +1,7 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Attach this to any character that can receive particle hits.
-// Set hostileParticleTags to the tags of particle systems that should damage THIS entity:
-//   - On Katarina / Mano / Ashe: add the enemy/DM particle tags (e.g. "EnemyAttack")
-//   - On the DM / enemy: add the player particle tags (e.g. "PlayerAttack")
-// This naturally prevents friendly fire — players only list enemy tags, never each other's.
-//
-// IMPORTANT Unity setup required:
-//   1. Each attacking particle system must have "Send Collision Messages" checked in its inspector.
-//   2. This GameObject (the receiver) must have a Collider component.
-//   3. Tag the particle system's GameObject with one of the hostile tags listed below.
 public class ParticleHitDetector : MonoBehaviour
 {
     [Header("Character Identity")]
@@ -23,8 +14,15 @@ public class ParticleHitDetector : MonoBehaviour
              "Enemy: add each player's particle tag.")]
     public List<string> hostileParticleTags = new List<string>();
 
+    [Header("Health")]
+    [SerializeField] private HealthManager healthManager;
+
     private static readonly Dictionary<string, ParticleHitDetector> _registry =
         new Dictionary<string, ParticleHitDetector>();
+
+    private readonly List<ParticleCollisionEvent> _collisionEvents = new List<ParticleCollisionEvent>();
+    private int _accumulatedHits;
+    private Coroutine _settleCoroutine;
 
     private void Awake()
     {
@@ -38,14 +36,10 @@ public class ParticleHitDetector : MonoBehaviour
             _registry.Remove(characterId);
     }
 
-    private void Start()
-    {
-        string tags = hostileParticleTags.Count > 0 ? string.Join(", ", hostileParticleTags) : "NONE";
-        Debug.Log($"[ParticleHitDetector] {gameObject.name} ready — listening for tags: [{tags}]");
-    }
-
     private void OnParticleCollision(GameObject other)
     {
+        Debug.Log($"[ParticleHitDetector] OnParticleCollision fired on {gameObject.name} from \"{other.name}\"");
+
         if (hostileParticleTags.Count == 0)
         {
             Debug.LogWarning($"[ParticleHitDetector] {gameObject.name}: hostileParticleTags is empty — no collisions will register.");
@@ -55,32 +49,35 @@ public class ParticleHitDetector : MonoBehaviour
         bool isHostile = false;
         foreach (string tag in hostileParticleTags)
         {
-            if (other.CompareTag(tag))
-            {
-                isHostile = true;
-                break;
-            }
+            if (other.CompareTag(tag)) { isHostile = true; break; }
         }
-
         if (!isHostile) return;
 
-        string activeRoller = GameEventListener.LastDiceRollingCharacter;
+        ParticleSystem ps = other.GetComponent<ParticleSystem>();
+        int count = ps != null ? ps.GetCollisionEvents(gameObject, _collisionEvents) : 1;
 
-        if (!string.IsNullOrEmpty(activeRoller) && activeRoller != characterId)
-        {
-            // Particles hit the wrong character physically — redirect to the correct one
-            if (_registry.TryGetValue(activeRoller, out ParticleHitDetector target))
-                target.RegisterHit(other);
-            else
-                Debug.LogWarning($"[ParticleHitDetector] No registered detector for active roller \"{activeRoller}\"");
-            return;
-        }
-
-        RegisterHit(other);
+        AccumulateHit(count);
     }
 
-    private void RegisterHit(GameObject other)
+    private void AccumulateHit(int count)
     {
-        Debug.Log($"[ParticleHit] {gameObject.name} was hit by particles from \"{other.name}\" (tag: {other.tag})");
+        _accumulatedHits += count;
+        if (_settleCoroutine != null) StopCoroutine(_settleCoroutine);
+        _settleCoroutine = StartCoroutine(SettleDamage());
+    }
+
+    private IEnumerator SettleDamage()
+    {
+        yield return new WaitForSeconds(0.5f);
+        int dice = Mathf.Max(1, GameEventListener.LastDiceResult);
+        int damage = _accumulatedHits * dice;
+        Debug.Log($"[ParticleHit] {gameObject.name} — {_accumulatedHits} particles × dice {dice} = {damage} damage");
+        if (healthManager != null)
+        {
+            healthManager.TakeDamage(damage);
+            HealthManager.LogAllHp();
+        }
+        _accumulatedHits = 0;
+        _settleCoroutine = null;
     }
 }
