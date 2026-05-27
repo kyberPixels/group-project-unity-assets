@@ -1,8 +1,13 @@
+using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
 public class GameEventListener : MonoBehaviour
 {
+    public static string LastDiceRollingCharacter { get; private set; }
+
+    private readonly Dictionary<string, int> _lastKnownDiceResult = new Dictionary<string, int>();
+
     [SerializeField] private SupabaseRealtimeClient realtimeClient;
     [SerializeField] private Animator archerAnimator;
     [SerializeField] private Animator assassinAnimator;
@@ -94,13 +99,25 @@ public class GameEventListener : MonoBehaviour
         Debug.Log($"[player_state] type={ps.state_type} | vel={ps.velocity} | rot={ps.rotation}");
 
         CharacterMovement2 target = null;
-        if (ps.state_type != null && ps.state_type.StartsWith("archer_")) target = archerMovement;
-        else if (ps.state_type != null && ps.state_type.StartsWith("assassin_")) target = assassinMovement;
-        else if (ps.state_type != null && ps.state_type.StartsWith("sorcerer_")) target = sorcererMovement;
-        else if (ps.state_type != null && ps.state_type.StartsWith("dm_")) target = dmMovement;
+        string charId = null;
 
-        if (target == null) return;
+        if (ps.state_type != null && ps.state_type.StartsWith("archer_"))        { target = archerMovement;   charId = "archer"; }
+        else if (ps.state_type != null && ps.state_type.StartsWith("assassin_")) { target = assassinMovement; charId = "assassin"; }
+        else if (ps.state_type != null && ps.state_type.StartsWith("sorcerer_")) { target = sorcererMovement; charId = "sorcerer"; }
+        else if (ps.state_type != null && ps.state_type.StartsWith("dm_"))       { target = dmMovement;       charId = "dm"; }
 
-        target.ReceiveNetworkInput(ps.velocity, ps.rotation);
+        if (target != null)
+            target.ReceiveNetworkInput(ps.velocity, ps.rotation);
+
+        if (charId != null)
+        {
+            _lastKnownDiceResult.TryGetValue(charId, out int prev);
+            if (ps.last_die_result > 0 && ps.last_die_result != prev)
+            {
+                LastDiceRollingCharacter = charId;
+                Debug.Log($"[GameEventListener] Last dice roller → {charId} ({ps.last_die_result})");
+            }
+            _lastKnownDiceResult[charId] = ps.last_die_result;
+        }
     }
 }

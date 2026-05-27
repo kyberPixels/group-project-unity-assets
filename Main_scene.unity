@@ -32035,9 +32035,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fcc91ffaeaa847e48cfb5c4115cea63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParticleHitDetector
+  characterId: sorcerer
   hostileParticleTags:
   - Fire
-  particlesPerHit: 25
 --- !u!65 &1739909831
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33144,11 +33144,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fcc91ffaeaa847e48cfb5c4115cea63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParticleHitDetector
+  characterId: 
   hostileParticleTags:
   - Leaf
   - Dagger
   - Arrow
-  particlesPerHit: 25
 --- !u!65 &1963625894
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39523,9 +39523,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fcc91ffaeaa847e48cfb5c4115cea63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParticleHitDetector
+  characterId: 
   hostileParticleTags:
   - Fire
-  particlesPerHit: 25
 --- !u!65 &919132147783829898
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -45494,9 +45494,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fcc91ffaeaa847e48cfb5c4115cea63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParticleHitDetector
+  characterId: 
   hostileParticleTags:
   - Fire
-  particlesPerHit: 25
 --- !u!65 &3662611129456351799
 BoxCollider:
   m_ObjectHideFlags: 0
