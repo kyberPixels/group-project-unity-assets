@@ -16,6 +16,7 @@ public class ParticleHitDetector : MonoBehaviour
 
     [Header("Health")]
     [SerializeField] private HealthManager healthManager;
+    [SerializeField] private Animator _animator;
 
     private static readonly Dictionary<string, ParticleHitDetector> _registry =
         new Dictionary<string, ParticleHitDetector>();
@@ -87,6 +88,7 @@ public class ParticleHitDetector : MonoBehaviour
         if (healthManager != null)
         {
             healthManager.TakeDamage(damage);
+            _animator?.SetTrigger(characterId + "_defend");
             HealthManager.LogAllHp();
         }
         _accumulatedHits = 0;
