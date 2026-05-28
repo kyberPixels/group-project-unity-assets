@@ -2555,7 +2555,7 @@ GameObject:
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &508134780
 Transform:
   m_ObjectHideFlags: 0
@@ -2566,7 +2566,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.16208135, y: -0.000000014901158, z: 0.000000041909505, w: 0.9867775}
   m_LocalPosition: {x: -0.00000021606684, y: 0.14999995, z: 0.5299998}
-  m_LocalScale: {x: 1, y: 1, z: 1.419368}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1111732313}
@@ -8980,7 +8980,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 2f4e6492f506bbb4a8aeba850e3bb52f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 2f4e6492f506bbb4a8aeba850e3bb52f, type: 3}
       propertyPath: m_TagString
@@ -10942,7 +10942,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1372166752363329700, guid: 694964309b7b24b57ac84dfa2a6f2889, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1372166752363329700, guid: 694964309b7b24b57ac84dfa2a6f2889, type: 3}
       propertyPath: m_TagString
@@ -11745,7 +11745,7 @@ GameObject:
   m_Layer: 3
   m_Name: Fireball
   m_TagString: Fire
-  m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -11758,8 +11758,8 @@ Transform:
   m_GameObject: {fileID: 1164224414}
   serializedVersion: 2
   m_LocalRotation: {x: -0.022961633, y: -0.65707314, z: -0.0496119, w: 0.7518419}
-  m_LocalPosition: {x: -28, y: -23, z: 29}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 9, y: -26, z: 24}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 779436737}
@@ -11980,7 +11980,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 65
+      scalar: 40
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -24392,7 +24392,7 @@ GameObject:
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2060343857
 Transform:
   m_ObjectHideFlags: 0
@@ -24403,7 +24403,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.78422886, y: -0.20934951, z: -0.5521617, w: 0.19046089}
   m_LocalPosition: {x: -0.36081728, y: 0.45165128, z: -0.0000032186508}
-  m_LocalScale: {x: 2.2, y: 2.2, z: 2.2}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7621589704276654061}
@@ -35035,7 +35035,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5411724291880914366, guid: 0c91c0b0f6919bd4db3aac90d6b3f3ed, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5411724291880914366, guid: 0c91c0b0f6919bd4db3aac90d6b3f3ed, type: 3}
       propertyPath: m_TagString
