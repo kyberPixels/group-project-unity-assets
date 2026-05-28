@@ -2495,6 +2495,7 @@ MonoBehaviour:
   hostileParticleTags:
   - Fire
   healthManager: {fileID: 503342219}
+  _animator: {fileID: 3662611129456351795}
 --- !u!54 &503342217
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8980,7 +8981,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 2f4e6492f506bbb4a8aeba850e3bb52f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 2f4e6492f506bbb4a8aeba850e3bb52f, type: 3}
       propertyPath: m_TagString
@@ -9849,8 +9850,9 @@ MonoBehaviour:
   hostileParticleTags:
   - Leaf
   - Arrow
-  - dagger
+  - Dagger
   healthManager: {fileID: 913595300}
+  _animator: {fileID: 1963625890}
 --- !u!114 &913595300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10942,7 +10944,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1372166752363329700, guid: 694964309b7b24b57ac84dfa2a6f2889, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1372166752363329700, guid: 694964309b7b24b57ac84dfa2a6f2889, type: 3}
       propertyPath: m_TagString
@@ -11337,6 +11339,7 @@ MonoBehaviour:
   hostileParticleTags:
   - Fire
   healthManager: {fileID: 1111732320}
+  _animator: {fileID: 1730378797}
 --- !u!114 &1111732320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11980,7 +11983,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 40
+      scalar: 50
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -12476,7 +12479,7 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 20
+    angle: 30
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -13302,7 +13305,7 @@ ParticleSystem:
     flipU: 0
     flipV: 0
   VelocityModule:
-    enabled: 1
+    enabled: 0
     x:
       serializedVersion: 2
       minMaxState: 0
@@ -22726,7 +22729,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::manoController
   moveSpeed: 100
-  animator: {fileID: 1730378797}
 --- !u!65 &1739909831
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23787,7 +23789,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterMovement
   moveSpeed: 100
-  animator: {fileID: 1963625890}
 --- !u!65 &1987007421
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29785,7 +29786,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterMovement2
   moveSpeed: 100
-  animator: {fileID: 3662611129456351795}
 --- !u!4 &4098208463768353314 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3468591843359781271, guid: 0c91c0b0f6919bd4db3aac90d6b3f3ed, type: 3}
@@ -35035,7 +35035,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5411724291880914366, guid: 0c91c0b0f6919bd4db3aac90d6b3f3ed, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5411724291880914366, guid: 0c91c0b0f6919bd4db3aac90d6b3f3ed, type: 3}
       propertyPath: m_TagString

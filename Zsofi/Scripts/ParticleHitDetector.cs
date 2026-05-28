@@ -54,6 +54,8 @@ public class ParticleHitDetector : MonoBehaviour
         }
         if (!isHostile) return;
 
+        Debug.Log($"[ParticleHitDetector] Collision detected — target: {characterId} ({gameObject.name}), particle tag: \"{other.tag}\"");
+
         ParticleSystem ps = other.GetComponent<ParticleSystem>();
         int count = ps != null ? ps.GetCollisionEvents(gameObject, _collisionEvents) : 1;
 
@@ -88,6 +90,7 @@ public class ParticleHitDetector : MonoBehaviour
         if (healthManager != null)
         {
             healthManager.TakeDamage(damage);
+            Debug.Log($"[ParticleHitDetector] {characterId} HP after hit: {healthManager.CurrentHp}/{healthManager.MaxHp} (calc: {_accumulatedHits} hits × dice {dice} = {damage} damage)");
             _animator?.SetTrigger(characterId + "_defend");
             HealthManager.LogAllHp();
         }
