@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig>
   <Tracking>
+    <ImageTarget name="marker50" size="50.000000 50.000000" />
+    <ImageTarget name="markerBig" size="10.000000 10.000000" />
     <ImageTarget name="img_0439" size="1.000000 1.316213" />
     <ImageTarget name="marker" size="0.210000 0.210000" />
     <ImageTarget name="human" size="1.000000 1.571203" />
