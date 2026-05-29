@@ -11,6 +11,8 @@ public class GameEventListener : MonoBehaviour
     private readonly Dictionary<string, int> _lastKnownDiceResult = new Dictionary<string, int>();
 
     [SerializeField] private SupabaseRealtimeClient realtimeClient;
+    [SerializeField] private Animator diceAnimator; // SADA DODANO: Polje za tvoju kockicu!
+
     [SerializeField] private Animator archerAnimator;
     [SerializeField] private Animator assassinAnimator;
     [SerializeField] private Animator sorcererAnimator;
@@ -27,6 +29,8 @@ public class GameEventListener : MonoBehaviour
     public ParticleSystem arrow;
     public ParticleSystem dragger1;
     public ParticleSystem dragger2;
+
+
 
     void OnEnable()
     {
@@ -72,7 +76,7 @@ public class GameEventListener : MonoBehaviour
             Debug.LogWarning("No animator found for action: " + actionName);
             return;
         }
-
+        
         target.SetTrigger(actionName);
         if (actionName == "sorcerer_fight") leaf.Play();
         if (actionName == "dm_fight")       fire.Play();
@@ -84,7 +88,10 @@ public class GameEventListener : MonoBehaviour
     void HandleDieRoll(string dieType, int dieResult)
     {
         if (diceResultText != null)
+        {
             diceResultText.text = dieType + ": " + dieResult;
+        }
+
     }
 
     void HandlePlayerState(PlayerState ps)
@@ -97,8 +104,22 @@ public class GameEventListener : MonoBehaviour
         else if (ps.state_type != null && ps.state_type.StartsWith("sorcerer_")) { target = sorcererMovement; charId = "sorcerer"; }
         else if (ps.state_type != null && ps.state_type.StartsWith("dm_"))       { target = dmMovement;       charId = "dm"; }
 
-        if (target != null)
+        // SPAS OD ODLETANJA: Provjeravamo da li je ovaj paket zapravo novi roll kockice
+        bool isNewDiceRoll = false;
+        if (charId != null)
+        {
+            _lastKnownDiceResult.TryGetValue(charId, out int prev);
+            if (ps.last_die_result > 0 && ps.last_die_result != prev)
+            {
+                isNewDiceRoll = true;
+            }
+        }
+
+        // AKO JE ROLL U TOKU: Potpuno ignorišemo mrežni input za kretanje kako likovi ne bi odletjeli!
+        if (target != null && !isNewDiceRoll)
+        {
             target.ReceiveNetworkInput(ps.velocity, ps.rotation);
+        }
 
         if (charId != null)
         {
@@ -108,6 +129,28 @@ public class GameEventListener : MonoBehaviour
                 LastDiceRollingCharacter = charId;
                 LastDiceResult = ps.last_die_result;
                 Debug.Log($"[GameEventListener] Dice saved — {charId} rolled {ps.last_die_result}");
+                GameObject diceObject = GameObject.FindWithTag("Dice");
+
+                if (diceObject != null)
+                {
+                    
+                    // 2. Grab the Animator component from that 3D object
+                    Animator dynamicDiceAnimator = diceObject.GetComponent<Animator>();
+
+                    if (dynamicDiceAnimator != null)
+                    {
+                        // 3. Fire the animation
+                        dynamicDiceAnimator.SetTrigger("roll");
+                        // OR: dynamicDiceAnimator.Play("YourDiceRollAnimationClipName");
+                    }
+                    else
+                    {
+                        Debug.LogError("Found Dice object, but it is missing an Animator component!");
+                    }
+                } else
+                {
+                    Debug.LogError("Dice object");    
+                }
             }
             _lastKnownDiceResult[charId] = ps.last_die_result;
             LastDiceByCharacter[charId] = ps.last_die_result;
